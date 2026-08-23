@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Submit Feedback | EduResponse</title>
+	<meta name="description" content="A detailed, anonymous feedback form for students to evaluate courses, instructors, and campus facilities.">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<!-- ============ HEADER / NAVIGATION ============ -->
+	<header class="site-header">
+		<div class="container header__inner">
+			<a href="index.html" class="logo" aria-label="EduResponse home">
+				<span class="logo__mark" aria-hidden="true">ER</span>
+				<span class="logo__text">Edu<strong>Response</strong></span>
+			</a>
+
+			<nav class="main-nav" aria-label="Primary navigation">
+				<ul class="main-nav__list">
+					<li><a href="index.html#home" class="main-nav__link">Home</a></li>
+					<li><a href="index.html#about" class="main-nav__link">About</a></li>
+					<li><a href="index.html#features" class="main-nav__link">Features</a></li>
+					<li><a href="index.html#contact" class="main-nav__link">Contact</a></li>
+				</ul>
+			</nav>
+
+			<a href="feedback.html" class="btn btn--primary btn--small header__cta">Get Started</a>
+		</div>
+	</header>
+
+	<main>
+
+		<!-- ============ FORM PAGE HEADER ============ -->
+		<section class="form-hero">
+			<div class="container form-hero__inner">
+				<h1>Student Feedback Form</h1>
+				<p class="form-hero__description">
+					Your responses help teachers and administrators understand what's
+					working and what needs to improve. This form is completely anonymous
+					by default and takes about five minutes to complete.
+				</p>
+			</div>
+		</section>
+
+		<!-- ============ FEEDBACK FORM ============ -->
+		<section class="feedback-form-section">
+			<div class="container feedback-form-section__inner">
+
+				<div class="feedback-card">
+					<form action="feedback.html" method="get">
+
+					<!-- Student Information -->
+					<div class="form-block">
+						<div class="form-block__heading">
+							<span class="form-block__number">01</span>
+							<div>
+								<h2>Student Information</h2>
+								<p>Basic details about you and your program. Leave blank to stay fully anonymous.</p>
+							</div>
+						</div>
+
+						<div class="form-grid">
+							<div class="field">
+								<label for="student-name">Full Name <span class="field__optional">(optional)</span></label>
+								<input type="text" id="student-name" name="student-name" placeholder="Jane Doe">
+							</div>
+							<div class="field">
+								<label for="student-id">Student ID <span class="field__optional">(optional)</span></label>
+								<input type="text" id="student-id" name="student-id" placeholder="e.g. STU-2026-0142">
+							</div>
+							<div class="field">
+								<label for="department">Department</label>
+								<select id="department" name="department">
+									<option>Computer Science</option>
+									<option>Mechanical Engineering</option>
+									<option>Business Administration</option>
+									<option>Biology</option>
+									<option>Mathematics</option>
+									<option>Other</option>
+								</select>
+							</div>
+							<div class="field">
+								<label for="year">Year / Semester</label>
+								<select id="year" name="year">
+									<option>1st Year</option>
+									<option>2nd Year</option>
+									<option>3rd Year</option>
+									<option>4th Year</option>
+									<option>Graduate</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<!-- Course Information -->
+					<div class="form-block">
+						<div class="form-block__heading">
+							<span class="form-block__number">02</span>
+							<div>
+								<h2>Course Information</h2>
+								<p>Tell us which course and instructor this feedback is about.</p>
+							</div>
+						</div>
+
+						<div class="form-grid">
+							<div class="field">
+								<label for="course-name">Course Name</label>
+								<input type="text" id="course-name" name="course-name" placeholder="Introduction to Biology">
+							</div>
+							<div class="field">
+								<label for="course-code">Course Code</label>
+								<input type="text" id="course-code" name="course-code" placeholder="e.g. BIO-101">
+							</div>
+							<div class="field">
+								<label for="instructor-name">Instructor Name</label>
+								<input type="text" id="instructor-name" name="instructor-name" placeholder="Mr. Sharma">
+							</div>
+							<div class="field">
+								<label for="academic-term">Academic Term</label>
+								<select id="academic-term" name="academic-term">
+									<option>Fall 2026</option>
+									<option>Spring 2026</option>
+									<option>Summer 2026</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<!-- Ratings -->
+					<div class="form-block">
+						<div class="form-block__heading">
+							<span class="form-block__number">03</span>
+							<div>
+								<h2>Rate Your Experience</h2>
+								<p>Rate each area from 1 (Poor) to 5 (Excellent).</p>
+							</div>
+						</div>
+
+						<div class="rating-list">
+							<div class="rating-row">
+								<span class="rating-row__label">Teaching Quality</span>
+								<div class="rating-scale" role="radiogroup" aria-label="Teaching Quality rating">
+									<label class="rating-scale__option"><input type="radio" name="rating-teaching"><span>1</span></label>
+									<label class="rating-scale__option"><input type="radio" name="rating-teaching"><span>2</span></label>
+									<label class="rating-scale__option"><input type="radio" name="rating-teaching"><span>3</span></label>
+									<label class="rating-scale__option"><input type="radio" name="rating-teaching" checked><span>4</span></label>
+									<label class="rating-scale__option"><input type="radio" name="rating-teaching"><span>5</span></label>
+								</div>
+							</div>
+
+							<div class="rating-row">
+								<span class="rating-row__label">Course Content &amp; Structure</span>
+								<div class="rating-scale" role="radiogroup" aria-label="Course Content rating">
+									<label class="rating-scale__option"><input type="radio" name="rating-content"><span>1</span></label>
+									<label class="rating-scale__option"><input type="radio" name="rating-content"><span>2</span></label>
+									<label class="rating-scale__option"><input type="radio" name="rating-content"><span>3</span></label>
+									<label class="rating-scale__option"><input type="radio" name="rating-content"><span>4</span></label>
+									<label class="rating-scale__option"><input type="radio" name="rating-content" checked><span>5</span></label>
+								</div>
+							</div>
+
+							<div class="rating-row">
+								<span class="rating-row__label">Communication &amp; Clarity</span>
+								<div class="rating-scale" role="radiogroup" aria-label="Communication rating">
+									<label class="rating-scale__option"><input type="radio" name="rating-communication"><span>1</span></label>
+									<label class="rating-scale__option"><input type="radio" name="rating-communication"><span>2</span></label>
+									<label class="rating-scale__option"><input type="radio" name="rating-communication" checked><span>3</span></label>
+									<label class="rating-scale__option"><input type="radio" name="rating-communication"><span>4</span></label>
+									<label class="rating-scale__option"><input type="radio" name="rating-communication"><span>5</span></label>
+								</div>
+							</div>
+
+							<div class="rating-row">
+								<span class="rating-row__label">Punctuality &amp; Availability</span>
+								<div class="rating-scale" role="radiogroup" aria-label="Punctuality rating">
+									<label class="rating-scale__option"><input type="radio" name="rating-punctuality"><span>1</span></label>
+									<label class="rating-scale__option"><input type="radio" name="rating-punctuality"><span>2</span></label>
+									<label class="rating-scale__option"><input type="radio" name="rating-punctuality"><span>3</span></label>
+									<label class="rating-scale__option"><input type="radio" name="rating-punctuality" checked><span>4</span></label>
+									<label class="rating-scale__option"><input type="radio" name="rating-punctuality"><span>5</span></label>
+								</div>
+							</div>
+
+							<div class="rating-row">
+								<span class="rating-row__label">Doubt Resolution Support</span>
+								<div class="rating-scale" role="radiogroup" aria-label="Doubt Resolution rating">
+									<label class="rating-scale__option"><input type="radio" name="rating-support"><span>1</span></label>
+									<label class="rating-scale__option"><input type="radio" name="rating-support"><span>2</span></label>
+									<label class="rating-scale__option"><input type="radio" name="rating-support"><span>3</span></label>
+									<label class="rating-scale__option"><input type="radio" name="rating-support" checked><span>4</span></label>
+									<label class="rating-scale__option"><input type="radio" name="rating-support"><span>5</span></label>
+								</div>
+							</div>
+
+							<div class="rating-row">
+								<span class="rating-row__label">Overall Experience</span>
+								<div class="rating-scale" role="radiogroup" aria-label="Overall Experience rating">
+									<label class="rating-scale__option"><input type="radio" name="rating-overall"><span>1</span></label>
+									<label class="rating-scale__option"><input type="radio" name="rating-overall"><span>2</span></label>
+									<label class="rating-scale__option"><input type="radio" name="rating-overall"><span>3</span></label>
+									<label class="rating-scale__option"><input type="radio" name="rating-overall"><span>4</span></label>
+									<label class="rating-scale__option"><input type="radio" name="rating-overall" checked><span>5</span></label>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Written Feedback -->
+					<div class="form-block">
+						<div class="form-block__heading">
+							<span class="form-block__number">04</span>
+							<div>
+								<h2>Written Feedback</h2>
+								<p>Share more detail in your own words. This is often the most useful part.</p>
+							</div>
+						</div>
+
+						<div class="field field--full">
+							<label for="liked-most">What did you like most about this course?</label>
+							<textarea id="liked-most" name="liked-most" rows="3" placeholder="e.g. Clear explanations, engaging lectures, useful assignments..."></textarea>
+						</div>
+
+						<div class="field field--full">
+							<label for="improvements">What could be improved?</label>
+							<textarea id="improvements" name="improvements" rows="3" placeholder="e.g. Pacing, more practice problems, clearer grading criteria..."></textarea>
+						</div>
+
+						<div class="field field--full">
+							<label for="additional-comments">Additional Comments</label>
+							<textarea id="additional-comments" name="additional-comments" rows="3" placeholder="Anything else you'd like to share..."></textarea>
+						</div>
+					</div>
+
+					<!-- Preferences -->
+					<div class="form-block form-block--last">
+						<div class="form-block__heading">
+							<span class="form-block__number">05</span>
+							<div>
+								<h2>Submission Preferences</h2>
+								<p>Control how your feedback is shared.</p>
+							</div>
+						</div>
+
+						<div class="checkbox-list">
+							<label class="checkbox-item">
+								<input type="checkbox" name="anonymous" checked>
+								<span>Submit this feedback anonymously</span>
+							</label>
+							<label class="checkbox-item">
+								<input type="checkbox" name="follow-up">
+								<span>I am open to a follow-up conversation with the department</span>
+							</label>
+							<label class="checkbox-item">
+								<input type="checkbox" name="share-instructor">
+								<span>Share a summarized version with the instructor</span>
+							</label>
+						</div>
+					</div>
+
+					<div class="feedback-card__actions">
+						<button type="reset" class="btn btn--outline btn--large">Save Draft</button>
+						<button type="submit" class="btn btn--primary btn--large">Submit Feedback</button>
+					</div>
+					<p class="feedback-card__note">
+						This form works without JavaScript. No backend is connected yet, so submitting will reload the page.
+					</p>
+
+					</form>
+				</div>
+
+			</div>
+		</section>
+
+	</main>
+
+	<!-- ============ FOOTER ============ -->
+	<footer class="site-footer">
+		<div class="container footer__grid">
+
+			<div class="footer__brand">
+				<a href="index.html" class="logo logo--footer" aria-label="EduResponse home">
+					<span class="logo__mark" aria-hidden="true">ER</span>
+					<span class="logo__text">Edu<strong>Response</strong></span>
+				</a>
+				<p class="footer__tagline">
+					Empowering students, guiding educators, improving institutions,
+					one honest response at a time.
+				</p>
+			</div>
+
+			<nav class="footer__col" aria-label="Quick links">
+				<h3 class="footer__heading">Quick Links</h3>
+				<ul class="footer__list">
+					<li><a href="index.html#home">Home</a></li>
+					<li><a href="index.html#about">About</a></li>
+					<li><a href="index.html#features">Features</a></li>
+					<li><a href="index.html#contact">Contact</a></li>
+				</ul>
+			</nav>
+
+			<nav class="footer__col" aria-label="Resources">
+				<h3 class="footer__heading">Resources</h3>
+				<ul class="footer__list">
+					<li><a href="#">Documentation</a></li>
+					<li><a href="#">FAQs</a></li>
+					<li><a href="#">Privacy Policy</a></li>
+					<li><a href="#">Terms of Service</a></li>
+				</ul>
+			</nav>
+
+			<div class="footer__col">
+				<h3 class="footer__heading">Contact</h3>
+				<ul class="footer__list footer__list--contact">
+					<li>123 Campus Avenue, Learning City</li>
+					<li>support@eduresponse.example</li>
+					<li>+1 (555) 010-2030</li>
+				</ul>
+			</div>
+
+			<div class="footer__col">
+				<h3 class="footer__heading">Follow Us</h3>
+				<ul class="footer__social">
+					<li>
+						<a href="#" aria-label="Facebook">
+							<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94z"/></svg>
+						</a>
+					</li>
+					<li>
+						<a href="#" aria-label="Twitter / X">
+							<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-7.6 8.7L23 22h-6.6l-5.2-6.8L5.2 22H2l8.2-9.3L1.5 2h6.8l4.7 6.2L18.9 2zm-1.2 18h1.8L7.4 3.9H5.5L17.7 20z"/></svg>
+						</a>
+					</li>
+					<li>
+						<a href="#" aria-label="Instagram">
+							<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2c2.72 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.22.6 1.77 1.15.55.55.89 1.11 1.15 1.77.25.64.42 1.37.47 2.43.05 1.06.06 1.4.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.64.25-1.37.42-2.43.47-1.06.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.22 1.15-1.77A4.9 4.9 0 0 1 5.45 2.53c.64-.25 1.37-.42 2.43-.47C8.94 2.01 9.28 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.4-8.4a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg>
+						</a>
+					</li>
+					<li>
+						<a href="#" aria-label="LinkedIn">
+							<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.64h.05c.53-1 1.83-2.05 3.77-2.05C20.9 8.59 22 11 22 14.4V21h-4v-5.6c0-1.34-.03-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96V21H9z"/></svg>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+
+		<div class="footer__bottom">
+			<div class="container footer__bottom-inner">
+				<p>&copy; 2026 EduResponse. All rights reserved.</p>
+				<ul class="footer__legal">
+					<li><a href="#">Privacy Policy</a></li>
+					<li><a href="#">Terms of Use</a></li>
+					<li><a href="#">Cookie Policy</a></li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+
+</body>
+</html>

@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>EduResponse | Voice That Shapes Learning</title>
+	<meta name="description" content="A modern platform for collecting anonymous student feedback, tracking teacher performance, and generating actionable reports.">
+	<link rel="stylesheet" href="css/style.css">
+	<script>
+		(function () {
+			var saved = localStorage.getItem('eduresponse-theme');
+			var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+			document.documentElement.setAttribute('data-theme', theme);
+		})();
+	</script>
+</head>
+<body class="is-loading">
+
+	<!-- ============ PRELOADER ============ -->
+	<div id="preloader" class="preloader" role="status" aria-label="Loading EduResponse">
+		<div class="preloader__mark">
+			<span class="preloader__ring"></span>
+			<span class="preloader__logo">ER</span>
+		</div>
+		<p class="preloader__text">Loading EduResponse&hellip;</p>
+	</div>
+
+	<!-- ============ HEADER / NAVIGATION ============ -->
+	<header class="site-header">
+		<div class="container header__inner">
+			<a href="#" class="logo" aria-label="EduResponse home">
+				<span class="logo__mark" aria-hidden="true">ER</span>
+				<span class="logo__text">Edu<strong>Response</strong></span>
+			</a>
+
+			<nav class="main-nav" aria-label="Primary navigation">
+				<ul class="main-nav__list">
+					<li><a href="#home" class="main-nav__link is-active">Home</a></li>
+					<li><a href="#about" class="main-nav__link">About</a></li>
+					<li><a href="#features" class="main-nav__link">Features</a></li>
+					<li><a href="#contact" class="main-nav__link">Contact</a></li>
+				</ul>
+			</nav>
+
+			<div class="header__actions">
+				<button type="button" id="themeToggle" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false">
+					<svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+						<circle cx="12" cy="12" r="4"></circle>
+						<path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+					</svg>
+					<svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+						<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+					</svg>
+				</button>
+
+				<button type="button" class="btn btn--outline btn--small header__login" data-open-auth="login">Log In</button>
+				<button type="button" class="btn btn--primary btn--small header__cta" data-open-auth="signup">Sign Up</button>
+			</div>
+		</div>
+	</header>
+
+	<main id="home">
+
+		<!-- ============ HERO SECTION ============ -->
+		<section class="hero" aria-labelledby="hero-heading">
+			<div class="container hero__inner">
+				<div class="hero__content">
+					<p class="eyebrow">Feedback Made Simple</p>
+					<h1 id="hero-heading">Give Every Student a Voice That Truly Matters</h1>
+					<p class="hero__description">
+						EduResponse helps schools and colleges collect honest,
+						anonymous feedback from students, turning it into clear insights that
+						help teachers grow and institutions improve.
+					</p>
+					<div class="hero__actions">
+						<a href="feedback.html" class="btn btn--primary btn--large">Get Started Free</a>
+						<a href="#features" class="btn btn--outline btn--large">Explore Features</a>
+					</div>
+					<ul class="hero__stats" aria-label="Key statistics">
+						<li><strong>100%</strong><span>Anonymous</span></li>
+						<li><strong>24/7</strong><span>Access</span></li>
+						<li><strong>Real&#8209;time</strong><span>Reports</span></li>
+					</ul>
+				</div>
+
+				<div class="hero__media" aria-hidden="true">
+					<div class="hero__illustration">
+						<div class="summary-card">
+							<div class="summary-card__header">
+								<span class="summary-card__dot summary-card__dot--red"></span>
+								<span class="summary-card__dot summary-card__dot--yellow"></span>
+								<span class="summary-card__dot summary-card__dot--green"></span>
+								<span class="summary-card__title">Course Feedback Summary</span>
+							</div>
+
+							<div class="summary-card__score">
+								<div class="summary-card__score-value">4.8</div>
+								<div class="summary-card__score-meta">
+									<div class="summary-card__stars">
+										<span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+									</div>
+									<span class="summary-card__score-count">based on 312 responses</span>
+								</div>
+							</div>
+
+							<div class="summary-card__bars">
+								<div class="summary-bar">
+									<span class="summary-bar__label">5</span>
+									<div class="summary-bar__track"><div class="summary-bar__fill" style="width: 78%;"></div></div>
+									<span class="summary-bar__value">78%</span>
+								</div>
+								<div class="summary-bar">
+									<span class="summary-bar__label">4</span>
+									<div class="summary-bar__track"><div class="summary-bar__fill" style="width: 15%;"></div></div>
+									<span class="summary-bar__value">15%</span>
+								</div>
+								<div class="summary-bar">
+									<span class="summary-bar__label">3</span>
+									<div class="summary-bar__track"><div class="summary-bar__fill" style="width: 5%;"></div></div>
+									<span class="summary-bar__value">5%</span>
+								</div>
+								<div class="summary-bar">
+									<span class="summary-bar__label">2</span>
+									<div class="summary-bar__track"><div class="summary-bar__fill" style="width: 1%;"></div></div>
+									<span class="summary-bar__value">1%</span>
+								</div>
+								<div class="summary-bar">
+									<span class="summary-bar__label">1</span>
+									<div class="summary-bar__track"><div class="summary-bar__fill" style="width: 1%;"></div></div>
+									<span class="summary-bar__value">1%</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="notify-chip">
+							<span class="notify-chip__icon">
+								<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+							</span>
+							<div class="notify-chip__text">
+								<strong>New response received</strong>
+								<span>Anonymous &middot; Data Structures</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ ABOUT SECTION ============ -->
+		<section class="about" id="about" aria-labelledby="about-heading">
+			<div class="container about__inner">
+				<div class="section-heading">
+					<p class="eyebrow">About the Platform</p>
+					<h2 id="about-heading">What Is EduResponse?</h2>
+				</div>
+				<p class="about__text">
+					EduResponse is a digital platform designed to bridge the
+					communication gap between students, teachers, and administrators. It
+					provides a safe, structured, and anonymous way for students to share
+					their honest opinions about courses, teaching quality, and campus
+					facilities, while giving educators and institutions the data they need
+					to make meaningful improvements.
+				</p>
+				<p class="about__text">
+					Built with simplicity and trust at its core, the platform brings together
+					students, teachers, and administrators on a single, secure interface,
+					making continuous improvement a natural part of every academic term.
+				</p>
+			</div>
+		</section>
+
+		<!-- ============ FEATURES SECTION ============ -->
+		<section class="features" id="features" aria-labelledby="features-heading">
+			<div class="container">
+				<div class="section-heading">
+					<p class="eyebrow">Core Features</p>
+					<h2 id="features-heading">Everything Your Institution Needs</h2>
+					<p class="section-heading__text">
+						A complete toolkit for gathering feedback, tracking progress, and
+						acting on real insights.
+					</p>
+				</div>
+
+				<div class="feature-list">
+					<article class="feature-row feature-row--indigo">
+						<span class="feature-row__index">01</span>
+						<svg class="feature-row__icon" aria-hidden="true" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+							<circle cx="9" cy="7" r="4"></circle>
+							<path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+							<path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+						</svg>
+						<h3 class="feature-row__title">Anonymous Feedback</h3>
+						<p class="feature-row__text">
+							Students can share honest opinions without fear of judgment, thanks
+							to fully anonymous submission channels.
+						</p>
+						<svg class="feature-row__arrow" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+					</article>
+
+					<article class="feature-row feature-row--teal">
+						<span class="feature-row__index">02</span>
+						<svg class="feature-row__icon" aria-hidden="true" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+							<rect x="3" y="3" width="7" height="9" rx="1"></rect>
+							<rect x="14" y="3" width="7" height="5" rx="1"></rect>
+							<rect x="14" y="12" width="7" height="9" rx="1"></rect>
+							<rect x="3" y="16" width="7" height="5" rx="1"></rect>
+						</svg>
+						<h3 class="feature-row__title">Teacher Dashboard</h3>
+						<p class="feature-row__text">
+							A clear, organized dashboard where teachers can review feedback
+							trends and understand student sentiment at a glance.
+						</p>
+						<svg class="feature-row__arrow" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+					</article>
+
+					<article class="feature-row feature-row--amber">
+						<span class="feature-row__index">03</span>
+						<svg class="feature-row__icon" aria-hidden="true" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"></path>
+							<path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"></path>
+						</svg>
+						<h3 class="feature-row__title">Student Dashboard</h3>
+						<p class="feature-row__text">
+							A simple, guided space for students to submit feedback and track
+							their previously shared responses.
+						</p>
+						<svg class="feature-row__arrow" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+					</article>
+
+					<article class="feature-row feature-row--violet">
+						<span class="feature-row__index">04</span>
+						<svg class="feature-row__icon" aria-hidden="true" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M3 3v18h18"></path>
+							<rect x="7" y="12" width="3" height="6"></rect>
+							<rect x="12" y="8" width="3" height="10"></rect>
+							<rect x="17" y="5" width="3" height="13"></rect>
+						</svg>
+						<h3 class="feature-row__title">Detailed Reports</h3>
+						<p class="feature-row__text">
+							Auto-generated summaries and visual reports help administrators
+							spot trends and make data-driven decisions.
+						</p>
+						<svg class="feature-row__arrow" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+					</article>
+
+					<article class="feature-row feature-row--rose">
+						<span class="feature-row__index">05</span>
+						<svg class="feature-row__icon" aria-hidden="true" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+							<rect x="4" y="11" width="16" height="10" rx="2"></rect>
+							<path d="M8 11V7a4 4 0 0 1 8 0v4"></path>
+						</svg>
+						<h3 class="feature-row__title">Secure Access</h3>
+						<p class="feature-row__text">
+							Role-based access ensures every user only sees the information
+							relevant to them, keeping data safe and private.
+						</p>
+						<svg class="feature-row__arrow" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+					</article>
+
+					<article class="feature-row feature-row--sky">
+						<span class="feature-row__index">06</span>
+						<svg class="feature-row__icon" aria-hidden="true" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+							<circle cx="12" cy="12" r="9"></circle>
+							<path d="M12 7v5l3 3"></path>
+						</svg>
+						<h3 class="feature-row__title">Real-Time Insights</h3>
+						<p class="feature-row__text">
+							Feedback is processed instantly, giving institutions up-to-date
+							visibility into student experience at all times.
+						</p>
+						<svg class="feature-row__arrow" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ WHY CHOOSE US SECTION ============ -->
+		<section class="why-choose" aria-labelledby="why-choose-heading">
+			<div class="container why-choose__inner">
+				<div class="section-heading">
+					<p class="eyebrow">Why Choose Us</p>
+					<h2 id="why-choose-heading">Built for Trust, Designed for Impact</h2>
+				</div>
+
+				<div class="why-choose__grid">
+					<div class="why-choose__item">
+						<span class="why-choose__number">01</span>
+						<h3>Privacy First</h3>
+						<p>Every response is protected, ensuring students feel safe sharing their true opinions.</p>
+					</div>
+					<div class="why-choose__item">
+						<span class="why-choose__number">02</span>
+						<h3>Effortless to Use</h3>
+						<p>A clean, intuitive interface means no learning curve for students, teachers, or admins.</p>
+					</div>
+					<div class="why-choose__item">
+						<span class="why-choose__number">03</span>
+						<h3>Actionable Insights</h3>
+						<p>Clear reports turn raw feedback into decisions that genuinely improve the learning experience.</p>
+					</div>
+					<div class="why-choose__item">
+						<span class="why-choose__number">04</span>
+						<h3>Built for Education</h3>
+						<p>Designed specifically around the needs of schools, colleges, and universities.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ CONTACT CTA SECTION ============ -->
+		<section class="contact-cta" id="contact" aria-labelledby="contact-heading">
+			<div class="container contact-cta__inner">
+				<h2 id="contact-heading">Ready to Transform Feedback at Your Institution?</h2>
+				<p>
+					Join schools and colleges already building a culture of open, honest
+					communication with EduResponse.
+				</p>
+				<div class="contact-cta__actions">
+					<a href="feedback.html" class="btn btn--light btn--large">Get Started</a>
+					<a href="#" class="btn btn--ghost btn--large">Contact Sales</a>
+				</div>
+			</div>
+		</section>
+
+	</main>
+
+	<!-- ============ FOOTER ============ -->
+	<footer class="site-footer">
+		<div class="container footer__grid">
+
+			<div class="footer__brand">
+				<a href="#" class="logo logo--footer" aria-label="EduResponse home">
+					<span class="logo__mark" aria-hidden="true">ER</span>
+					<span class="logo__text">Edu<strong>Response</strong></span>
+				</a>
+				<p class="footer__tagline">
+					Empowering students, guiding educators, improving institutions,
+					one honest response at a time.
+				</p>
+			</div>
+
+			<nav class="footer__col" aria-label="Quick links">
+				<h3 class="footer__heading">Quick Links</h3>
+				<ul class="footer__list">
+					<li><a href="#home">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#features">Features</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</nav>
+
+			<nav class="footer__col" aria-label="Resources">
+				<h3 class="footer__heading">Resources</h3>
+				<ul class="footer__list">
+					<li><a href="#">Documentation</a></li>
+					<li><a href="#">FAQs</a></li>
+					<li><a href="#">Privacy Policy</a></li>
+					<li><a href="#">Terms of Service</a></li>
+				</ul>
+			</nav>
+
+			<div class="footer__col">
+				<h3 class="footer__heading">Contact</h3>
+				<ul class="footer__list footer__list--contact">
+					<li>123 Campus Avenue, Learning City</li>
+					<li>support@eduresponse.example</li>
+					<li>+1 (555) 010-2030</li>
+				</ul>
+			</div>
+
+			<div class="footer__col">
+				<h3 class="footer__heading">Follow Us</h3>
+				<ul class="footer__social">
+					<li>
+						<a href="#" aria-label="Facebook">
+							<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94z"/></svg>
+						</a>
+					</li>
+					<li>
+						<a href="#" aria-label="Twitter / X">
+							<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-7.6 8.7L23 22h-6.6l-5.2-6.8L5.2 22H2l8.2-9.3L1.5 2h6.8l4.7 6.2L18.9 2zm-1.2 18h1.8L7.4 3.9H5.5L17.7 20z"/></svg>
+						</a>
+					</li>
+					<li>
+						<a href="#" aria-label="Instagram">
+							<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2c2.72 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.22.6 1.77 1.15.55.55.89 1.11 1.15 1.77.25.64.42 1.37.47 2.43.05 1.06.06 1.4.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.64.25-1.37.42-2.43.47-1.06.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.22 1.15-1.77A4.9 4.9 0 0 1 5.45 2.53c.64-.25 1.37-.42 2.43-.47C8.94 2.01 9.28 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.4-8.4a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg>
+						</a>
+					</li>
+					<li>
+						<a href="#" aria-label="LinkedIn">
+							<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.64h.05c.53-1 1.83-2.05 3.77-2.05C20.9 8.59 22 11 22 14.4V21h-4v-5.6c0-1.34-.03-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96V21H9z"/></svg>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+
+		<div class="footer__bottom">
+			<div class="container footer__bottom-inner">
+				<p>&copy; 2026 EduResponse. All rights reserved.</p>
+				<ul class="footer__legal">
+					<li><a href="#">Privacy Policy</a></li>
+					<li><a href="#">Terms of Use</a></li>
+					<li><a href="#">Cookie Policy</a></li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+
+	<!-- ============ AUTH MODAL ============ -->
+	<div id="authModal" class="auth-modal" aria-hidden="true">
+		<div class="auth-modal__backdrop" data-close-auth></div>
+
+		<div class="auth-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
+			<button type="button" class="auth-modal__close" data-close-auth aria-label="Close dialog">
+				<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+			</button>
+
+			<div class="auth-modal__panel">
+				<div class="auth-modal__side" aria-hidden="true">
+					<span class="auth-modal__side-mark">ER</span>
+					<h3>Your voice, heard.</h3>
+					<p>Join thousands of students and educators building better classrooms through honest feedback.</p>
+					<ul class="auth-modal__side-points">
+						<li>100% anonymous submissions</li>
+						<li>Real-time insight dashboards</li>
+						<li>Trusted by 40+ institutions</li>
+					</ul>
+				</div>
+
+				<div class="auth-modal__form-area">
+					<div class="auth-tabs" role="tablist" aria-label="Authentication">
+						<button type="button" class="auth-tabs__btn is-active" id="tabLogin" role="tab" aria-selected="true" aria-controls="panelLogin" data-auth-tab="login">Log In</button>
+						<button type="button" class="auth-tabs__btn" id="tabSignup" role="tab" aria-selected="false" aria-controls="panelSignup" data-auth-tab="signup">Sign Up</button>
+						<span class="auth-tabs__indicator" aria-hidden="true"></span>
+					</div>
+
+					<!-- Login -->
+					<form class="auth-form" id="panelLogin" role="tabpanel" aria-labelledby="tabLogin">
+						<h2 id="authModalTitle" class="auth-form__title">Welcome back</h2>
+						<p class="auth-form__subtitle">Log in to view your feedback history and dashboards.</p>
+
+						<div class="field field--full">
+							<label for="loginEmail">Email address</label>
+							<input type="email" id="loginEmail" name="email" placeholder="you@school.edu" required>
+						</div>
+
+						<div class="field field--full">
+							<label for="loginPassword">Password</label>
+							<input type="password" id="loginPassword" name="password" placeholder="Enter your password" required>
+						</div>
+
+						<div class="auth-form__row">
+							<label class="auth-checkbox">
+								<input type="checkbox" name="remember">
+								<span>Remember me</span>
+							</label>
+							<a href="#" class="auth-form__link">Forgot password?</a>
+						</div>
+
+						<button type="submit" class="btn btn--primary btn--large auth-form__submit">Log In</button>
+
+						<p class="auth-form__switch">Don't have an account? <button type="button" data-auth-tab="signup">Sign up</button></p>
+					</form>
+
+					<!-- Sign Up -->
+					<form class="auth-form" id="panelSignup" role="tabpanel" aria-labelledby="tabSignup" hidden>
+						<h2 class="auth-form__title">Create your account</h2>
+						<p class="auth-form__subtitle">Join EduResponse in seconds — free for students and teachers.</p>
+
+						<div class="field field--full">
+							<label for="signupName">Full name</label>
+							<input type="text" id="signupName" name="name" placeholder="Jordan Lee" required>
+						</div>
+
+						<div class="field field--full">
+							<label for="signupEmail">Email address</label>
+							<input type="email" id="signupEmail" name="email" placeholder="you@school.edu" required>
+						</div>
+
+						<div class="field field--full">
+							<label for="signupPassword">Password</label>
+							<input type="password" id="signupPassword" name="password" placeholder="Create a password" required>
+						</div>
+
+						<label class="auth-checkbox auth-checkbox--terms">
+							<input type="checkbox" name="terms" required>
+							<span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
+						</label>
+
+						<button type="submit" class="btn btn--primary btn--large auth-form__submit">Create Account</button>
+
+						<p class="auth-form__switch">Already have an account? <button type="button" data-auth-tab="login">Log in</button></p>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		var MIN_LOADER_TIME = 6000;
+		var pageLoadedAt = null;
+
+		window.addEventListener('load', function () {
+			pageLoadedAt = Date.now();
+			var elapsed = pageLoadedAt - performance.timing.navigationStart;
+			var remaining = Math.max(MIN_LOADER_TIME - elapsed, 0);
+
+			setTimeout(function () {
+				var preloader = document.getElementById('preloader');
+				document.body.classList.remove('is-loading');
+				document.body.classList.add('is-loaded');
+				preloader.addEventListener('transitionend', function () {
+					preloader.remove();
+				}, { once: true });
+			}, remaining);
+		});
+	</script>
+
+	<script>
+		// ---------- Theme toggle ----------
+		(function () {
+			var root = document.documentElement;
+			var toggle = document.getElementById('themeToggle');
+
+			function syncToggle() {
+				var isDark = root.getAttribute('data-theme') === 'dark';
+				toggle.setAttribute('aria-pressed', String(isDark));
+				toggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+			}
+
+			syncToggle();
+
+			toggle.addEventListener('click', function () {
+				var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+				root.setAttribute('data-theme', next);
+				localStorage.setItem('eduresponse-theme', next);
+				syncToggle();
+			});
+		})();
+
+		// ---------- Auth modal ----------
+		(function () {
+			var modal = document.getElementById('authModal');
+			var openTriggers = document.querySelectorAll('[data-open-auth]');
+			var closeTriggers = document.querySelectorAll('[data-close-auth]');
+			var tabButtons = document.querySelectorAll('[data-auth-tab]');
+			var tabIndicator = modal.querySelector('.auth-tabs__indicator');
+			var lastFocused = null;
+
+			var panels = {
+				login: document.getElementById('panelLogin'),
+				signup: document.getElementById('panelSignup')
+			};
+			var tabs = {
+				login: document.getElementById('tabLogin'),
+				signup: document.getElementById('tabSignup')
+			};
+
+			function showTab(name) {
+				Object.keys(panels).forEach(function (key) {
+					panels[key].hidden = key !== name;
+					tabs[key].classList.toggle('is-active', key === name);
+					tabs[key].setAttribute('aria-selected', String(key === name));
+				});
+				if (tabIndicator) {
+					tabIndicator.style.transform = name === 'signup' ? 'translateX(100%)' : 'translateX(0)';
+				}
+			}
+
+			function openModal(tab) {
+				lastFocused = document.activeElement;
+				showTab(tab || 'login');
+				modal.classList.add('is-open');
+				modal.setAttribute('aria-hidden', 'false');
+				document.body.classList.add('no-scroll');
+				var firstField = panels[tab || 'login'].querySelector('input');
+				if (firstField) {
+					setTimeout(function () { firstField.focus(); }, 250);
+				}
+			}
+
+			function closeModal() {
+				modal.classList.remove('is-open');
+				modal.setAttribute('aria-hidden', 'true');
+				document.body.classList.remove('no-scroll');
+				if (lastFocused) lastFocused.focus();
+			}
+
+			openTriggers.forEach(function (btn) {
+				btn.addEventListener('click', function () {
+					openModal(btn.getAttribute('data-open-auth'));
+				});
+			});
+
+			closeTriggers.forEach(function (btn) {
+				btn.addEventListener('click', closeModal);
+			});
+
+			tabButtons.forEach(function (btn) {
+				btn.addEventListener('click', function () {
+					showTab(btn.getAttribute('data-auth-tab'));
+					var panel = panels[btn.getAttribute('data-auth-tab')];
+					var firstField = panel.querySelector('input');
+					if (firstField) firstField.focus();
+				});
+			});
+
+			document.addEventListener('keydown', function (e) {
+				if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+					closeModal();
+				}
+			});
+
+			['panelLogin', 'panelSignup'].forEach(function (id) {
+				document.getElementById(id).addEventListener('submit', function (e) {
+					e.preventDefault();
+					closeModal();
+				});
+			});
+		})();
+	</script>
+
+</body>
+</html>
